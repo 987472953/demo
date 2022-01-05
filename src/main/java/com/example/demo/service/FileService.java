@@ -18,6 +18,7 @@ public class FileService {
     private JdbcTemplate jdbcTemplate;
 
     public Boolean saveFile(FileInfo fileInfo) {
+        System.out.println("ceshi");
         String sql = "insert into file_info values(null, ?, ?, ?, ?, ?, ?, ?)";
         int update = jdbcTemplate.update(sql, fileInfo.getUuid(), fileInfo.getFileName(), fileInfo.getFileSize()
                 , fileInfo.getFileType(), fileInfo.getOriginalName(), fileInfo.getFilePath(), fileInfo.getCreateTime());
